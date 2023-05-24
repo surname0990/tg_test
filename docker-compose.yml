@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  telegram-bot:
+    container_name: telegram-bot
+    working_dir: /telegram_bot
+    restart: always
+    build:
+        context: .
+        # указывает на текущую директорию как контекст для сборки.
+        dockerfile: Dockerfile
+    command: sh -c "python main.py"
+    #используется для запуска нескольких команд в одном процессе shell.
